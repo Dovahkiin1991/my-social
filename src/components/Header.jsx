@@ -1,7 +1,8 @@
-import React, { Component }  from 'react';
+import React  from 'react';
+import classes from './Header.module.css';
 
 const Header = () => {
-    return <header className="header">
+    return <header className={classes.header}>
         <img width="80" src="https://placeit-assets.s3-accelerate.amazonaws.com/landing-pages/landing-page-redo-make-a-gaming-logo/Deadnauts-Esports-Logo-Maker.png" alt=""/>
     </header>;
 }
