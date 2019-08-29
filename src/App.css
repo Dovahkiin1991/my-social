@@ -23,6 +23,44 @@
   color: #61dafb;
 }
 
+.container {
+  max-width: 80%;
+  margin: 0px auto;
+  display: block;
+}
+ul {
+  text-align: left;
+}
+.wrapper {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas:
+          "h h" "n c";
+
+  /*grid-gap: 10px;*/
+}
+.header {
+  grid-area: h;
+  background: #cecece;
+}
+
+.content {
+  grid-area: c;
+}
+
+.nav {
+  grid-area: n;
+  background: #c7c7c7;
+}
+.nav a {
+  display: block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
