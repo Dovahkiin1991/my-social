@@ -1,0 +1,15 @@
+.post {
+    color: green;
+    border: 1px solid #282c34;
+    background: #fff;
+    padding: 5px;
+    margin-bottom: 6px;
+}
+.count {
+    color: #000;
+    display: block;
+}
+.count b {
+    margin-left: 6px;
+    display: inline-block;
+}
