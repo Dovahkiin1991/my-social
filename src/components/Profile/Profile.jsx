@@ -3,7 +3,7 @@ import MyPosts from './MyPosts/MyPosts';
 import classes from './Profile.module.css';
 
 const Profile = () => {
-    return <div className={classes.content}>
+    return <div>
         <div>
             <img src="https://www.bates.edu/wordpress/files/2016/07/pattern1.jpg" alt=""/>
         </div>

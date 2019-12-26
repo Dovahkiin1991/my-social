@@ -10,3 +10,6 @@
 .nav .item a {
     color: #fff
 }
+.nav .item a.active {
+    color: #000;
+}

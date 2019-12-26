@@ -36,9 +36,15 @@ ul {
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-template-areas:
+  "b b"
           "h h" "n c";
 
   /*grid-gap: 10px;*/
+}
+
+.wrapper-content {
+  grid-area: c;
+  padding: 5px;
 }
 
 img {
