@@ -9,13 +9,15 @@ const MyPosts = () => {
         { id: 2, message: 'Props send test', likesCount: 33}
     ];
 
+    let postsElements = postsData
+        .map( posts => <Post likes={posts.likesCount} message={posts.message} />);
+
     return <div className={classes.posts}>
         <h2>My posts</h2>
         <div>New post</div>
 
         <div>
-            <Post likes={postsData[0].likesCount} message={postsData[0].message} />
-            <Post likes={postsData[1].likesCount} message={postsData[1].message} />
+            { postsElements }
         </div>
     </div>
 }
