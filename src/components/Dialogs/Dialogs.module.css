@@ -1,0 +1,26 @@
+.blocks {
+    display: flex;
+}
+.dialogs {
+    flex: 1 0 calc(50% - 10px);
+    width: calc(50% - 10px);
+    padding: 0 5px;
+    border-right: 1px solid #c7c7c7;
+}
+.dialogs__item {
+    display: block;
+    font-size: 14px;
+}
+.dialogs__item__active {
+    font-weight: bold;
+}
+
+.messages {
+    flex: 1 0 calc(50% - 10px);
+    width: calc(50% - 10px);
+    padding: 0 5px;
+}
+.messages__item {
+    display: block;
+    font-size: 14px;
+}
