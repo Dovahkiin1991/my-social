@@ -2,8 +2,8 @@
     display: flex;
 }
 .dialogs {
-    flex: 1 0 calc(50% - 10px);
-    width: calc(50% - 10px);
+    flex: 1 0 calc(40% - 10px);
+    width: calc(40% - 10px);
     padding: 0 5px;
     border-right: 1px solid #c7c7c7;
 }
@@ -15,9 +15,17 @@
     font-weight: bold;
 }
 
+.dialogs__item a {
+    display: flex;
+    align-items: center;
+}
+.dialogs__item img {
+    width: 50px;
+}
+
 .messages {
-    flex: 1 0 calc(50% - 10px);
-    width: calc(50% - 10px);
+    flex: 1 0 calc(60% - 10px);
+    width: calc(60% - 10px);
     padding: 0 5px;
 }
 .messages__item {
