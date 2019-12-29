@@ -4,9 +4,15 @@ import classes from './Friends.module.css';
 const Friends = (props) => {
     // debugger;
     let friendsList = props.state.friends
-        .map(friend => <div className={classes.friends__item}><a href="#">
-            <img width="30" src={friend.user_avatar} alt={friend.name}/>
-        </a></div>);
+        .map(friend => <div className={classes.friends__item}>
+            <a href="#">
+                <span className={classes.poster}>
+                    <img width="30" src={friend.user_avatar} alt={friend.name}/>
+                </span>
+                <span>{friend.name}</span>
+            </a>
+
+        </div>);
 
     return (
         <div className={classes.friends}>

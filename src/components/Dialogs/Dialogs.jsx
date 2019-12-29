@@ -9,7 +9,7 @@ const Dialogs = (props) => {
         .map(dialog => <DialogItem id={dialog.id} name={dialog.name} user_avatar={dialog.user_avatar} />);
 
     let messagesElements = props.state.messagesData
-        .map( message => <MessageItem id={message.id} message={message.message} />);
+        .map( message => <MessageItem id={message.id} user_avatar={message.user_avatar} user_id={message.user_id} message={message.message} />);
 
     return (
         <div className={classes.blocks}>
@@ -18,7 +18,9 @@ const Dialogs = (props) => {
             </div>
 
             <div className={classes.messages}>
-                { messagesElements }
+                <ul>
+                    { messagesElements }
+                </ul>
             </div>
         </div>
     );
