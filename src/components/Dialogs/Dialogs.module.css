@@ -2,8 +2,8 @@
     display: flex;
 }
 .dialogs {
-    flex: 1 0 calc(40% - 10px);
-    width: calc(40% - 10px);
+    flex: 1 0 calc(30% - 10px);
+    width: calc(30% - 10px);
     padding: 0 5px;
     border-right: 1px solid #c7c7c7;
 }
@@ -22,26 +22,34 @@
 .dialogs__item img {
     width: 50px;
 }
-
-.messages {
-    flex: 1 0 calc(60% - 10px);
-    width: calc(60% - 10px);
-    padding: 0 5px;
+@media screen and (max-width: 767px) {
+    .blocks {
+        flex-wrap: wrap;
+    }
+    .dialogs {
+        flex: 1 0 100%;
+        width: 100%;
+    }
 }
 .messages__item {
     display: block;
     font-size: 14px;
 }
 .messages {
+    flex: 1 0 calc(70% - 10px);
+    width: calc(70% - 10px);
+    padding: 0 5px;
     height: auto;
     min-height: calc(100% - 93px);
     max-height: calc(100% - 93px);
     overflow-y: scroll;
     overflow-x: hidden;
 }
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 767px) {
     .messages {
         max-height: calc(100% - 105px);
+        flex: 1 0 100%;
+        width: 100%;
     }
 }
 .messages::-webkit-scrollbar {

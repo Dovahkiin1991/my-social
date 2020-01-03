@@ -35,3 +35,8 @@
     width: 100%;
     margin-bottom: 10px;
 }
+@media screen and (max-width: 767px) {
+    .friends__item {
+        width: 50%;
+    }
+}

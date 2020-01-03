@@ -1,4 +1,6 @@
 //all data
+import {rerenderEntireTree} from "../render";
+
 let state = {
     sidebar : {
         title : 'Friends',
@@ -32,6 +34,18 @@ let state = {
             { id: 5, user_id: 2, user_avatar: '/assets/img/user.png', message: 'Test hi'}
         ]
     }
+}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likesCount: 0
+    };
+
+    state.profilePage.postsData.push(newPost);
+
+    rerenderEntireTree(state);
 }
 
 export default state;
