@@ -33,7 +33,8 @@ let state = {
             { id: 3, user_id: 2, user_avatar: '/assets/img/user.png', message: 'Hi test'},
             { id: 4, user_id: 1, user_avatar: '/assets/img/user.png', message: 'Test'},
             { id: 5, user_id: 2, user_avatar: '/assets/img/user.png', message: 'Test hi'}
-        ]
+        ],
+        newMessageText: 'Say, hi to your friend'
     }
 }
 
@@ -45,12 +46,34 @@ export let addPost = (postMessage) => {
     };
 
     state.profilePage.postsData.push(newPost);
+    state.profilePage.newPostText = '';
 
     rerenderEntireTree(state);
 }
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+
+    rerenderEntireTree(state);
+}
+
+export let addMessage = (singleMessage) => {
+    let newMessage = {
+        id: 6,
+        user_id: 1,
+        user_avatar: '/assets/img/user.png',
+        message: state.messagesPage.newMessageText,
+        likesCount: 0
+    };
+
+    state.messagesPage.messagesData.push(newMessage);
+    state.messagesPage.newMessageText = '';
+
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.messagesPage.newMessageText = newText;
 
     rerenderEntireTree(state);
 }
