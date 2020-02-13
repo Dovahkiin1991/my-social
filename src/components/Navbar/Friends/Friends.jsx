@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Friends.module.css';
 
 const Friends = (props) => {
-    // debugger;
     let friendsList = props.state.friends
         .map(friend => <div className={classes.friends__item}>
             <a href="#">
