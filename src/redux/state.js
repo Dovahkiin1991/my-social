@@ -36,52 +36,65 @@ let store = {
             newMessageText: 'Say, hi to your friend'
         }
     },
-    getState() {
-      return this._state;
-    },
     _callSubscriber() {
         console.log('test')
     },
-    addPost(postMessage) {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-
-        this._state.profilePage.postsData.push(newPost);
-        this._state.profilePage.newPostText = '';
-
-        store._callSubscriber(this._state);
-    },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-
-        store._callSubscriber(this._state);
-    },
-    addMessage(singleMessage) {
-        let newMessage = {
-            id: 6,
-            user_id: 1,
-            user_avatar: '/assets/img/user.png',
-            message: this._state.messagesPage.newMessageText,
-            likesCount: 0
-        };
-
-        this._state.messagesPage.messagesData.push(newMessage);
-        this._state.messagesPage.newMessageText = '';
-
-        store._callSubscriber(this._state);
-    },
-    updateNewMessageText(newText) {
-        this._state.messagesPage.newMessageText = newText;
-
-        store._callSubscriber(this._state);
+    getState() {
+      return this._state;
     },
     subscribe(observer) {
         store._callSubscriber = observer;
-    }
+    },
 
+    addPost(postMessage) {
+
+    },
+    updateNewPostText(newText) {
+
+    },
+    addMessage(singleMessage) {
+
+    },
+    updateNewMessageText(newText) {
+
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likesCount: 0
+            };
+
+            this._state.profilePage.postsData.push(newPost);
+            this._state.profilePage.newPostText = '';
+
+            store._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+
+            store._callSubscriber(this._state);
+        } else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 6,
+                user_id: 1,
+                user_avatar: '/assets/img/user.png',
+                message: this._state.messagesPage.newMessageText,
+                likesCount: 0
+            };
+
+            this._state.messagesPage.messagesData.push(newMessage);
+            this._state.messagesPage.newMessageText = '';
+
+            store._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+            this._state.messagesPage.newMessageText = action.newText;
+
+            store._callSubscriber(this._state);
+        }
+
+    }
 }
 
 export default store;
