@@ -46,19 +46,6 @@ let store = {
         store._callSubscriber = observer;
     },
 
-    addPost(postMessage) {
-
-    },
-    updateNewPostText(newText) {
-
-    },
-    addMessage(singleMessage) {
-
-    },
-    updateNewMessageText(newText) {
-
-    },
-
     dispatch(action) {
         if (action.type === 'ADD-POST') {
             let newPost = {
