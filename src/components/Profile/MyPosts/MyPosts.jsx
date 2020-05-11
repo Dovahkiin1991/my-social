@@ -5,7 +5,7 @@ import classes from './MyPosts.module.css';
 const MyPosts = (props) => {
 
     let postsElements = props.posts
-        .map( posts => <Post likes={posts.likesCount} message={posts.message} />);
+        .map( posts => <Post key={posts.id} likes={posts.likesCount} message={posts.message} />);
 
     let newPostElement = React.createRef();
 
