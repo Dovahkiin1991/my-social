@@ -19,7 +19,6 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(onMessageChangeActionCreator(body));
         },
         sendMessage: () => {
-            debugger
             dispatch(addMessageCreater());
         }
     }
