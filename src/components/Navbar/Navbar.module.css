@@ -9,6 +9,9 @@
     display: block;
     color: #fff
 }
+.nav .item:last-child {
+    margin-top: 20px;
+}
 .nav .item a {
     color: #fff
 }
