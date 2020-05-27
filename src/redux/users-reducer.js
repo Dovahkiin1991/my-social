@@ -8,7 +8,7 @@ let initialState = {
     users: [
         
     ],
-    pageSize: 5,
+    pageSize: 3,
     totalUsersCount: 0,
     currentPage : 1
 };
