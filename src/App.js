@@ -2,7 +2,7 @@ import React from 'react';
 import Topbar from './components/Topbar/Topbar';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import './App.css';
@@ -16,7 +16,7 @@ const App = (props) => {
           <Navbar state={props.state} />
           <div className="wrapper-content">
               <Route path='/dialogs' render={ () => <DialogsContainer /> } />
-              <Route path='/profile' render={ () => <Profile /> } />
+              <Route path='/profile' render={ () => <ProfileContainer /> } />
               <Route path='/users' render={ () => <UsersContainer />  } />
           </div>
       </div>
