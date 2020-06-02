@@ -1,6 +1,6 @@
 import React from 'react';
 import Topbar from './components/Topbar/Topbar';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -12,7 +12,7 @@ const App = (props) => {
   return (
       <div className="wrapper">
           <Topbar />
-          <Header />
+          <HeaderContainer />
           <Navbar state={props.state} />
           <div className="wrapper-content">
               <Route path='/dialogs' render={ () => <DialogsContainer /> } />

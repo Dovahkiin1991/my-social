@@ -1,9 +1,23 @@
 .header {
     grid-area: h;
     background: #cecece;
-    padding: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .header img {
     display: block;
     max-width: 100%;
+}
+.loginBlock {
+
+}
+.loginBlock a {
+    color: #000;
+}
+.loginBlock a:hover,
+.loginBlock a:focus,
+.loginBlock a:active {
+    text-decoration: none;
 }
