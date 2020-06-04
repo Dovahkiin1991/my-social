@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import styles from './users.module.css';
+import * as axios from 'axios';
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -22,8 +23,34 @@ let Users = (props) => {
                     </div>
                     <div>
                         {u.followed 
-                            ? <button onClick={ ()=> {props.unfollow(u.id)} }>Unfollow</button>
-                            : <button onClick={ ()=> {props.follow(u.id)} }>Follow</button> }
+                            ? <button onClick={ ()=> {
+
+                                axios.delete(`https://social-network.samuraijs.com/api/1.0/unfollow/` + u.id, {
+                                    withCredentials: true,
+                                    headers: {
+                                        'API-KEY': '23914faa-28f7-4a00-953d-4b655b9a61b4'
+                                    }
+                                }).then(response => {
+                                    if (response.data.resultCode == 0) {
+                                        props.unfollow(u.id)
+                                    }
+                                });
+
+                            } }>Unfollow</button>
+                            : <button onClick={ ()=> {
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/` + u.id, {}, {
+                                    withCredentials: true,
+                                    headers: {
+                                        'API-KEY': '23914faa-28f7-4a00-953d-4b655b9a61b4'
+                                    }
+                                }).then(response => {
+                                    if (response.data.resultCode == 0) {
+                                        props.follow(u.id)
+                                    }
+                                });
+                                
+
+                                } }>Follow</button> }
                     </div>
                 </span>
                 <span>
@@ -45,7 +72,7 @@ let Users = (props) => {
         <div className={styles.pagination}>
             {
                 pages.map(p => {
-                    return <span onClick={() => { props.onPageChanged(p) }} className={props.currentPage === p && styles.selectedPage}>{p}</span>
+                    return <span key={p.id} onClick={() => { props.onPageChanged(p) }} className={props.currentPage === p && styles.selectedPage}>{p}</span>
                 })
             }
         </div>
