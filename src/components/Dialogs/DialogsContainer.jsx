@@ -1,7 +1,7 @@
-import React  from 'react';
-import classes from './Dialogs.module.css';
-import DialogItem from './DialogItem/DialogItem';
-import MessageItem from './Message/Message';
+// import React  from 'react';
+// import classes from './Dialogs.module.css';
+// import DialogItem from './DialogItem/DialogItem';
+// import MessageItem from './Message/Message';
 import {addMessageCreater, onMessageChangeActionCreator} from "../../redux/messages-reducer";
 import Dialogs from './Dialogs';
 import { connect } from 'react-redux';

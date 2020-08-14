@@ -14,7 +14,7 @@ let Users = (props) => {
 
     return <div>
         {
-            props.users.map(u => <div key={u.id} className={styles.userItem}>
+            props.users.map(u => <div id={u.id} key={u.id} className={styles.userItem}>
                 <span>
                     <div>
                         <NavLink to={'/profile/' + u.id}>
@@ -31,7 +31,7 @@ let Users = (props) => {
                                         'API-KEY': '23914faa-28f7-4a00-953d-4b655b9a61b4'
                                     }
                                 }).then(response => {
-                                    if (response.data.resultCode == 0) {
+                                    if (response.data.resultCode === 0) {
                                         props.unfollow(u.id)
                                     }
                                 });
@@ -44,7 +44,7 @@ let Users = (props) => {
                                         'API-KEY': '23914faa-28f7-4a00-953d-4b655b9a61b4'
                                     }
                                 }).then(response => {
-                                    if (response.data.resultCode == 0) {
+                                    if (response.data.resultCode === 0) {
                                         props.follow(u.id)
                                     }
                                 });
@@ -72,7 +72,7 @@ let Users = (props) => {
         <div className={styles.pagination}>
             {
                 pages.map(p => {
-                    return <span key={p.id} onClick={() => { props.onPageChanged(p) }} className={props.currentPage === p && styles.selectedPage}>{p}</span>
+                    return <span id={p.id} key={p} onClick={() => { props.onPageChanged(p) }} className={props.currentPage === p ? styles.selectedPage : ''}>{p}</span>
                 })
             }
         </div>
